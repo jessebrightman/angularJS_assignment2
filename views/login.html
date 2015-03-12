@@ -1,8 +1,31 @@
-<label for="name">Name</label>
-<input type="text" name="name" id="name">
-<label for="name">Password</label>
-<input type="password" ng-model="value1" equals="{{value2}}">
-<label for="name">Confirm Password</label>
-<input type="password" ng-model="value2" equals="{{value1}}">
+<h2>{{title}}</h2>
+<form ng-controller="LoginCtrl" name="myForm" novalidate>
 
-<input type="submit" ng-disabled="value1!=value2" />
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" ng-model="name" required>
+    <span style="color:red" ng-show="myForm.name.$dirty && myForm.name.$invalid">
+        <span ng-show="myForm.name.$error.required">Username is required.</span>
+    </span>
+    <br/>
+    <br/>
+
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" ng-model="password1" equals="{{password2}}">
+    <span style="color:red" ng-show="myForm.password1.$dirty && myForm.password1.$invalid">
+        <span ng-show="myForm.password1.$error.required">Email is required.</span>
+        <span ng-show="myForm.password1.$error.email">Invalid email address.</span>
+    </span>
+    <br/>
+    <br/>
+
+    <label for="password2">Password</label>
+    <input type="password" name="password2" id="password2" ng-model="password2" equals="{{password1}}">
+    <span style="color:red" ng-show="myForm.password2.$dirty && myForm.email.$invalid">
+        <span ng-show="myForm.password2.$error.required">Email is required.</span>
+        <span ng-show="myForm.password2.$error.email">Invalid email address.</span>
+    </span>
+    <br/>
+    <br/>
+
+    <input type="submit" ng-disabled="myForm.name.$dirty && myForm.name.$invalid || myForm.password1.$dirty && myForm.password1.$invalid || password1!=password2">
+</form>
