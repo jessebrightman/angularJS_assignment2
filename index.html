@@ -2,17 +2,21 @@
 <html>
 <head>
     <title>Angular JS Assignment 2</title>
-
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 </head>
 <!--reference the app level module-->
-<body ng-app='loginApp' ng-controller="AppCtrl">
+<body ng-app='validationApp' ng-controller="AppCtrl">
 <!--reference the controller-->
-<div>
-    <h1>{{title}}</h1>
-    <hr>
-    <div ng-view></div><br />
-    <hr>
+<div class="container">
+    <div class="col-sm-8 col-sm-offset-2">
+        <h1>{{title}}</h1>
+        <hr>
+        <div ng-view></div><br />
+        <hr>
+    </div>
 </div>
+
 <!--angular-->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular-route.min.js"></script>
